@@ -2,18 +2,18 @@
   "manifest_version": 2,
   "name": "miss-me",
   "version": "1.0.0",
-  "description": "Lock a window so links opened from other apps go to a different window instead.",
+  "description": "Make a window dodge new tabs: links opened from other apps go to a different window instead.",
   "permissions": ["tabs", "sessions"],
   "background": {
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_title": "Lock this window (links from other apps open elsewhere)",
-    "default_icon": "icons/unlocked.svg"
+    "default_title": "Dodge new tabs in this window (links from other apps open elsewhere)",
+    "default_icon": "icons/off.svg"
   },
   "icons": {
-    "48": "icons/locked.svg",
-    "96": "icons/locked.svg"
+    "48": "icons/on.svg",
+    "96": "icons/on.svg"
   },
   "browser_specific_settings": {
     "gecko": {

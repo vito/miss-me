@@ -18,13 +18,13 @@
 const LOCK_KEY = "locked";
 
 const ICONS = {
-  locked: "icons/locked.svg",
-  unlocked: "icons/unlocked.svg",
+  locked: "icons/on.svg",
+  unlocked: "icons/off.svg",
 };
 
 const TITLES = {
-  locked: "Unlock this window",
-  unlocked: "Lock this window (links from other apps open elsewhere)",
+  locked: "Stop dodging new tabs in this window",
+  unlocked: "Dodge new tabs in this window (links from other apps open elsewhere)",
 };
 
 // Tabs opened on these pages were opened on purpose from inside the window.
