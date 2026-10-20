@@ -12,8 +12,8 @@
     "default_icon": "icons/off.svg"
   },
   "icons": {
-    "48": "icons/on.svg",
-    "96": "icons/on.svg"
+    "48": "icons/logo.svg",
+    "96": "icons/logo.svg"
   },
   "browser_specific_settings": {
     "gecko": {
