@@ -1,0 +1,17 @@
+[modules.editor]
+source = "github.com/vito/editor"
+
+[modules.ci]
+source = "ci"
+
+[modules.committer]
+source = "github.com/vito/agents/committer"
+
+[modules.dagger-dang-sdk]
+source = "github.com/dagger/dang-sdk"
+
+[sdks.dang]
+module = "dagger-dang-sdk"
+
+[sdks.dang.scopes.ci]
+is-module = true

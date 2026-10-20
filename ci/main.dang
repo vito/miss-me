@@ -1,0 +1,40 @@
+"""
+Checks for the miss-me browser extension.
+"""
+type Ci {
+  """
+  The extension source directory.
+  """
+  source: Directory!
+
+  new(source: Directory! @defaultPath(path: "/extension")) {
+    self.source = source
+    self
+  }
+
+  """
+  Lint the extension with Mozilla's addons-linter (web-ext lint), the same
+  validation addons.mozilla.org runs. Warnings fail the check too.
+  """
+  lint: Void @check {
+    container
+      .from("node:22-alpine")
+      .withDirectory("/src", source)
+      .withWorkdir("/src")
+      .withExec(["npx", "--yes", "web-ext@8", "lint", "--source-dir", ".", "--warnings-as-errors"])
+      .sync
+    null
+  }
+
+  """
+  Package the extension as an unsigned .zip, ready for signing on AMO.
+  """
+  build: File! {
+    container
+      .from("node:22-alpine")
+      .withDirectory("/src", source)
+      .withWorkdir("/src")
+      .withExec(["npx", "--yes", "web-ext@8", "build", "--source-dir", ".", "--artifacts-dir", "/out", "--filename", "miss-me.zip"])
+      .file("/out/miss-me.zip")
+  }
+}
